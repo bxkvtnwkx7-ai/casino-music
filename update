@@ -1,0 +1,25 @@
+local speaker = peripheral.find("speaker")
+
+if not speaker then
+  print("No speaker found")
+  return
+end
+
+local function note(pitch, length, sound)
+  speaker.playSound(sound or "minecraft:block.note_block.pling", 1, pitch)
+  sleep(length)
+end
+
+while true do
+  note(1.00, 0.16)
+  note(1.26, 0.16)
+  note(1.50, 0.16)
+  note(2.00, 0.24)
+
+  note(1.50, 0.14, "minecraft:block.note_block.bell")
+  note(1.26, 0.14, "minecraft:block.note_block.bell")
+  note(1.50, 0.14, "minecraft:block.note_block.bell")
+  note(2.00, 0.28, "minecraft:block.note_block.chime")
+
+  sleep(0.4)
+end
