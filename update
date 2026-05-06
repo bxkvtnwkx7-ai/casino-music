@@ -1,7 +1,7 @@
 local speaker = peripheral.wrap("right")
 
 if not speaker then
-  print("No speaker")
+  print("No speaker on right")
   return
 end
 
@@ -11,24 +11,25 @@ local function n(inst, pitch, delay)
 end
 
 while true do
-  -- intro piano feel
-  n("harp", 1, 0.4)
-  n("harp", 2, 0.4)
-  n("harp", 3, 0.6)
+  -- soft intro (piano feel)
+  n("harp", 1, 0.5)
+  n("harp", 3, 0.5)
+  n("harp", 5, 0.7)
 
-  -- bass line
+  -- walking bass line
   n("bass", 1, 0.6)
-  n("harp", 2, 0.3)
-  n("harp", 3, 0.3)
-
-  -- card deal accent
-  n("pling", 1, 0.5)
-  n("harp", 4, 0.7)
-
-  -- loop resolution
   n("bass", 1, 0.6)
-  n("harp", 2, 0.5)
-  n("harp", 3, 0.7)
+  n("harp", 3, 0.4)
 
-  sleep(1)
+  -- jazz lift
+  n("harp", 5, 0.4)
+  n("harp", 6, 0.4)
+  n("pling", 1, 0.6)
+
+  -- resolution phrase (slower, cleaner)
+  n("harp", 3, 0.5)
+  n("bass", 1, 0.5)
+  n("harp", 5, 0.8)
+
+  sleep(0.8)
 end
