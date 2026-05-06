@@ -1,5 +1,12 @@
 local speaker = peripheral.wrap("right")
 
-print("speaker =", speaker)
-print("type =", peripheral.getType("right"))
-print("methods =", textutils.serialize(peripheral.getMethods("right")))
+if not speaker then
+  print("No speaker")
+  return
+end
+
+speaker.playNote("harp", 1, 1)
+sleep(0.5)
+speaker.playNote("bass", 1, 1)
+sleep(0.5)
+speaker.playNote("pling", 1, 1)
