@@ -1,0 +1,5 @@
+local speaker = peripheral.wrap("right")
+
+print("speaker =", speaker)
+print("type =", peripheral.getType("right"))
+print("methods =", textutils.serialize(peripheral.getMethods("right")))
